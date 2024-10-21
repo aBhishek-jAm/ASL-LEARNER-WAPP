@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Learner - Beginner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <h1>ASL LEARNER APP - Beginner Level</h1>
+    </div>
+    <div class="level-text">
+        <h2>LEVEL: BEGINNER</h2>
+    </div>
+    <div class="frames-container">
+        <!-- Left Frame: Alphabet Image -->
+        <div class="frame" id="image-frame">
+            <img id="alphabet-image" src="{{ url_for('static', filename='images/alphabets/A.jpg') }}" alt="Alphabet A">
+
+        </div>
+        <!-- Right Frame: Live Camera Feed -->
+        <div class="frame" id="camera-frame">
+           
+            <img src="{{ url_for('video_feed_beginner') }}" id="camera-video" alt="Live Feed">
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="next-btn">Next</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
