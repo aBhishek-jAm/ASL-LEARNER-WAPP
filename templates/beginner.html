@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Learner - Beginner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .popup-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            left: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .popup a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+
+        .popup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>ASL LEARNER APP - Beginner Level</h1>
+    </div>
+    <div class="level-text">
+        <h2>LEVEL: BEGINNER</h2>
+    </div>
+    <div class="frames-container">
+        <!-- Left Frame: Alphabet Image -->
+        <div class="frame" id="image-frame">
+            <img id="alphabet-image" src="{{ url_for('static', filename='images/alphabets/A.jpg') }}" alt="Alphabet A">
+        </div>
+        <!-- Right Frame: Live Camera Feed -->
+        <div class="frame" id="camera-frame">
+            <img src="{{ url_for('video_feed_beginner') }}" id="camera-video" alt="Live Feed">
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="next-btn">Next</button>
+    </div>
+
+    <!-- Popup Button -->
+    <button class="popup-btn" onclick="togglePopup()">Resources</button>
+
+    <!-- Popup Content -->
+    <div class="popup" id="popup">
+        <a href="https://www.lifeprint.com/" target="_blank">ASL University</a>
+        <a href="https://www.handspeak.com/" target="_blank">Handspeak</a>
+        <a href="https://www.startasl.com/" target="_blank">Start ASL</a>
+        <a href="https://asl.ms/" target="_blank">ASL Dictionary</a>
+        <a href="https://www.signlanguage101.com/" target="_blank">Sign Language 101</a>
+    </div>
+
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .candidate-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .candidate-table th, .candidate-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .candidate-table th {
+            background-color: #00695c;
+            color: white;
+        }
+        .candidate-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .candidate-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .rating {
+            color: #f4b400; /* Golden color for ratings */
+            font-weight: bold;
+        }
+        .candidate-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Candidate Listings</h1>
+    <table class="candidate-table">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Experience (Years)</th>
+                <th>Rating</th>
+                <th>Contacts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/profile/profile.jpg') }}" alt="ab" class="candidate-image"></td>
+                <td>ABHI</td>
+                <td>32</td>
+                <td>8</td>
+                <td><span class="rating">4.5/5</span></td>
+                <td>93456789</td>
+            </tr>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/profile/p.jpg') }}" alt="pj" class="candidate-image"></td>
+                <td>PRAJWAL</td>
+                <td>28</td>
+                <td>5</td>
+                <td><span class="rating">4.0/5</span></td>
+                <td>98765432</td>
+            </tr>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/profile/y.jpg') }}" alt="yg" class="candidate-image"></td>
+                <td>YASHAS</td>
+                <td>45</td>
+                <td>20</td>
+                <td><span class="rating">4.8/5</span></td>
+                <td>87654321</td>
+            </tr>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/profile/a.jpg') }}" alt="as" class="candidate-image"></td>
+                <td>ASHISH</td>
+                <td>30</td>
+                <td>7</td>
+                <td><span class="rating">4.2/5</span></td>
+                <td>76543210</td>
+            </tr>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/profile/r.jpg') }}" alt="rk" class="candidate-image"></td>
+                <td>RAJATH</td>
+                <td>39</td>
+                <td>15</td>
+                <td><span class="rating">4.7/5</span></td>
+                <td>65432109</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p>Please Contact <a href="mailto:ABC@gmail.com">ABC@gmail.com</a> for onboarding as a trainer.</p>
+</body>
+</html>
